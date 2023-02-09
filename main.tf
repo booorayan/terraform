@@ -24,5 +24,5 @@ resource "vultr_firewall_rule" "test_firewall" {
   protocol          = "tcp"
   subnet            = "0.0.0.0"
   subnet_size       = 0
-  port              = "8000"
+  port              = "22"
 }
