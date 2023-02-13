@@ -4,6 +4,7 @@ variable "vultr_api_key" {
 
 }
 
+
 variable "plan" {
   description = "VM Instance plan"
   type = string

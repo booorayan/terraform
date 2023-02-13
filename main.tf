@@ -8,7 +8,13 @@ resource "vultr_instance" "test_vm" {
   firewall_group_id = vultr_firewall_group.test_firewall_group.id
 }
 
-resource "vultr_block_storage" "test_blockstorage" {
+resource "vultr_object_storage" "test_objectStorage" {
+  cluster_id = 2
+  label = "tf_label"
+
+}
+
+resource "vultr_block_storage" "test_blockStorage" {
   region  = var.region
   size_gb = 10
   attached_to_instance = vultr_instance.test_vm.id

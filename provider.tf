@@ -5,6 +5,15 @@ terraform {
       version = ">2.10.1"
     }
   }
+
+  #  Configure the s3 backend
+  backend "s3" {
+    bucket = "tf-bucket"
+    key    = "terraform.tfstate"
+    endpoint = "ewr1.vultrobjects.com"
+    region = "us-east-1"
+    skip_credentials_validation = true
+  }
 }
 
 provider "vultr" {
