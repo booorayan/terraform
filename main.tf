@@ -1,4 +1,4 @@
-
+#Define virtual machine resource
 resource "vultr_instance" "test_vm" {
   plan   = var.plan
   region = var.region
@@ -8,12 +8,14 @@ resource "vultr_instance" "test_vm" {
   firewall_group_id = vultr_firewall_group.test_firewall_group.id
 }
 
+#Define object storage resource
 resource "vultr_object_storage" "tf_label" {
   cluster_id = 2
   label = "tf_label"
 
 }
 
+#Define block storage resource
 resource "vultr_block_storage" "test_blockStorage" {
   region  = var.region
   size_gb = 10
