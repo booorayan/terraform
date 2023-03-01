@@ -31,5 +31,6 @@ To get the access and secret access keys for object storage:
 
 ## Todo:
 - [x] Add remote backend to store the tfstate file
-- Add multiple firewall rules to allow access on multiple ports
-- [x] Print/echo the public ip address
+- [x] Add multiple firewall rules to allow access on multiple ports
+- [x] Print out the public ip address
+

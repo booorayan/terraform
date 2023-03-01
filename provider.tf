@@ -1,4 +1,5 @@
 terraform {
+#  specify version of provider
   required_providers {
     vultr = {
       source = "vultr/vultr"
@@ -16,6 +17,7 @@ terraform {
   }
 }
 
+#set API rate limit
 provider "vultr" {
   api_key = var.vultr_api_key
   rate_limit = 700
