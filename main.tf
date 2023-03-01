@@ -20,10 +20,13 @@ resource "vultr_block_storage" "test_blockStorage" {
   attached_to_instance = vultr_instance.test_vm.id
 }
 
+#Firewall configuration
+#firewall group
 resource "vultr_firewall_group" "test_firewall_group" {
   description = "Test firewall group"
 }
 
+#firewall rule for ssh access
 resource "vultr_firewall_rule" "ssh_firewall_rule" {
   firewall_group_id = vultr_firewall_group.test_firewall_group.id
   ip_type           = "v4"
@@ -33,6 +36,7 @@ resource "vultr_firewall_rule" "ssh_firewall_rule" {
   port              = "22"
 }
 
+#firewall rule for http(port 80) access
 resource "vultr_firewall_rule" "http_firewall_rule" {
   firewall_group_id = vultr_firewall_group.test_firewall_group.id
   ip_type           = "v4"
@@ -42,6 +46,7 @@ resource "vultr_firewall_rule" "http_firewall_rule" {
   port              = "80"
 }
 
+#firewall rule for https(port 443) access
 resource "vultr_firewall_rule" "https_firewall_rule" {
   firewall_group_id = vultr_firewall_group.test_firewall_group.id
   ip_type           = "v4"
@@ -51,6 +56,7 @@ resource "vultr_firewall_rule" "https_firewall_rule" {
   port              = "443"
 }
 
+#firewall rule for icmp(ping) access
 resource "vultr_firewall_rule" "icmp_firewall_rule" {
   firewall_group_id = vultr_firewall_group.test_firewall_group.id
   ip_type           = "v4"
@@ -60,6 +66,7 @@ resource "vultr_firewall_rule" "icmp_firewall_rule" {
 #  port              = "443"
 }
 
+#firewall rule for dns(tcp) access
 resource "vultr_firewall_rule" "dns_tcp_firewall_rule" {
   firewall_group_id = vultr_firewall_group.test_firewall_group.id
   ip_type           = "v4"
@@ -69,6 +76,7 @@ resource "vultr_firewall_rule" "dns_tcp_firewall_rule" {
   port              = "53"
 }
 
+#firewall rule for dns(udp) access
 resource "vultr_firewall_rule" "dns_udp_firewall_rule" {
   firewall_group_id = vultr_firewall_group.test_firewall_group.id
   ip_type           = "v4"
