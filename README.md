@@ -29,6 +29,12 @@ To get the access and secret access keys for object storage:
 3. Object storage
 4. Firewall group and rules
 
+To provision cloud resources with terraform, run the following commands:
+
+1. `terraform plan` , which provides an overview of the resources to be provisioned
+
+2. `terraform apply`, which effects the changes defined in terraform files and provisions the resources.
+
 ## Todo:
 - [x] Add remote backend to store the tfstate file
 - [x] Add multiple firewall rules to allow access on multiple ports
